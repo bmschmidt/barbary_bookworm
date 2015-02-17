@@ -1,7 +1,13 @@
 import re
 
 
-def snippetyielder(docbreaks):
+def snippetyielder(filename):
+	text = open(filename)
+	a = text.readlines()
+	p = "".join(a)
+	docbreak = re.sub(r"(.*SDA.*)",r"\1DOCBREAK",p)
+	docbreaks = docbreak.split("DOCBREAK")
+
 	for doc in docbreaks:
 		yield doc
 			# elif re.match(r"(.*NDA.*)",line):
@@ -41,3 +47,7 @@ def snippetyielder(docbreaks):
 
 
 
+if __name__=="__main__":
+	#f = open("v1.txt", 'r')
+	for snippet in snippetyielder("test.txt"):
+		pass
