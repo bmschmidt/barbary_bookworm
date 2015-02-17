@@ -1,13 +1,6 @@
 import re
 
 
-#f = open("v1.txt", 'r')
-text = open('test.txt')
-a = text.readlines()
-p = "".join(a)
-docbreak = re.sub(r"(.*SDA.*)",r"\1DOCBREAK",p)
-docbreaks = docbreak.split("DOCBREAK")
-
 def snippetyielder(docbreaks):
 	for doc in docbreaks:
 		yield doc
@@ -36,15 +29,15 @@ def snippetyielder(docbreaks):
  class document:
   	def _init_(self, doc):
   		self.doc = doc
-
-#  	def raw_text:
-
-# 	def metadata:
-
-# 	def get_date:
-
-# 	def does_this_look_suspicious:
-		
+  		
+  	def raw_text(self):
+		pass
+ 	def metadata(self):
+		pass
+ 	def get_date(self):
+		pass
+ 	def does_this_look_suspicious(self):
+		pass
 
 
 
